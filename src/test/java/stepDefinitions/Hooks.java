@@ -17,7 +17,7 @@ public class Hooks {
     public static void beforeAll() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--remote-allow-origins=*", "start-maximized");
         driver = new ChromeDriver(options);
     }
 
