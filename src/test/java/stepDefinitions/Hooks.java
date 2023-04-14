@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
 import io.cucumber.java.BeforeAll;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -28,5 +29,9 @@ public class Hooks {
     public void before() {
         driver.manage().deleteAllCookies();
 
+    }
+    @AfterAll
+    public static void GlobalTeardown(){
+        driver.close();
     }
 }

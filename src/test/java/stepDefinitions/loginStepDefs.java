@@ -40,14 +40,7 @@ public class loginStepDefs {
     @Then("I will be logged in as {string}")
     public void iWillBeLoggedInAsAUser(String user) {
         Assert.assertEquals(user, accountPage.getUsername());
-        System.out.println("Logged in successfully");
+        System.out.println("Logged in successfully as: " + user);
     }
 
-//    @When("^I click on \"(.*?)\"$")
-//    public void clickSignIn(String elementToClick) {
-//        if (elementToClick.equals("sign in")) {
-//            homePage.clickSignIn();
-//        }
-//        System.out.println("I have clicked on the " + elementToClick + " button");
-//    }
 }
