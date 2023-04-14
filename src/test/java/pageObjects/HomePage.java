@@ -8,7 +8,6 @@ public class HomePage extends BasePage {
 
     private static final By CLICK_SIGN_IN_BUTTON = By.xpath("//span[text()='Sign in']");
 
-    //            By.cssSelector(".user-info > a");
     public void goToHomepage() {
         driver.get(URL);
     }
