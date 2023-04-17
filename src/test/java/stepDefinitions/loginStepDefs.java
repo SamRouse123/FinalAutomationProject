@@ -19,11 +19,11 @@ public class loginStepDefs {
         loginPage = new LoginPage();
         accountPage = new AccountPage();
     }
-    @Given("I am on the homepage")
-    public void iAmOnHomePage(){
-        homePage.goToHomepage();
-        System.out.println("I am on the homepage");
-    }
+//    @Given("I am on the homepage")
+//    public void iAmOnHomePage(){
+//        homePage.goToHomepage();
+//        System.out.println("I am on the homepage");
+//    }
     @When("I click on Sign In")
     public void clickSignIn(){
         homePage.clickSignIn();

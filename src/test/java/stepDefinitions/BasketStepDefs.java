@@ -18,10 +18,11 @@ TShirtPage tShirtPage;
         tShirtPage = new TShirtPage();
     }
 
-    @Given("I am on the homepage")
-    public void iAmOnHomePage(){
-        homePage.goToHomepage();
-    }
+//    @Given("I am on the homepage")
+//    public void iAmOnHomePage() {
+////        homePage.goToHomepage();
+//    }
+
     @When("I select an item")
 public void clickOnItem(){
 homePage.clickOnDress();
