@@ -9,13 +9,13 @@ import pageObjects.HomePage;
 import pageObjects.RemoveItem;
 import pageObjects.ShoppingCart;
 
-public class removeItemStepDefs {
+public class BasketStepDefs {
     HomePage homePage;
     RemoveItem removeItem;
 
     ShoppingCart shoppingCart;
 
-    public removeItemStepDefs() {
+    public BasketStepDefs() {
         homePage = new HomePage();
         removeItem = new RemoveItem();
         shoppingCart = new ShoppingCart();

@@ -4,11 +4,11 @@ import io.cucumber.java.en.Given;
 import pageObjects.HomePage;
 import pageObjects.LoginPage;
 
-public class loginStepDefs {
+public class LoginStepDefs {
     LoginPage loginPage;
     HomePage homePage;
 
-    public loginStepDefs() {
+    public LoginStepDefs() {
         homePage = new HomePage();
         loginPage = new LoginPage();
     }
