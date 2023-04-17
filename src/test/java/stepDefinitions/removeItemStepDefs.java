@@ -42,12 +42,10 @@ public class removeItemStepDefs {
     }
 
 
-
-
-@Then("the current basket will be empty")
-public void iAmClearingTheBasket() {
-    removeItem.removingItem();
-    Assert.assertEquals("There are no more items in your cart" , shoppingCart.confirmCartIsEmpty());
+    @Then("the current basket will be empty")
+    public void iAmClearingTheBasket() {
+        removeItem.removingItem();
+        Assert.assertEquals("There are no more items in your cart", shoppingCart.confirmCartIsEmpty());
     }
 }
 
