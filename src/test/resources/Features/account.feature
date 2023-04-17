@@ -9,9 +9,10 @@ Feature: Account page
     Given I click on create account
     When I click Mr social title button
     And I fill out the information table
-    | First Name | |
-    | Last Name  | |
-    | Email | |
-    | Password  | |
-    | Birthdate | |
+      | First name | Samuel              |
+      | Last name  | Rouse               |
+      | Email      | Test5@test.gmail.com |
+      | Password   | test123             |
+      | Birthday   | 01/01/1990          |
+    Then I will be logged in as a new user
 
