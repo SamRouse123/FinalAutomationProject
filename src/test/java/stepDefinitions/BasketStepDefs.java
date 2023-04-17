@@ -22,10 +22,6 @@ public class BasketStepDefs {
     }
 
 
-    @Given("I am on the homepage")
-    public void iAmOnHomePage() {
-        homePage.goToHomepage();
-    }
 
 
     @When("I click on the item of purchase")
