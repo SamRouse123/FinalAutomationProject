@@ -1,7 +1,6 @@
 package stepDefinitions;
 
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -31,7 +30,7 @@ public class BasketStepDefs {
     }
 
 
-    @And("I add the item to the cart and I proceed to checkout")
+    @When("I add the item to the cart and I proceed to checkout")
     public void iAmAddingItemToCartAndCheckingOut() {
         removeItem.addingToCart();
         removeItem.checkingOut();
