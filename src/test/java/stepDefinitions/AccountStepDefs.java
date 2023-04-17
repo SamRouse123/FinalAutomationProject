@@ -1,22 +1,42 @@
 package stepDefinitions;
 
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pageObjects.CreateAccount;
+import org.junit.Assert;
+import pageObjects.CreateAccountPage;
+
+import java.util.Map;
 
 public class AccountStepDefs {
-    CreateAccount createAccount;
+    CreateAccountPage createAccountPage;
 
-    public AccountStepDefs(){
-        createAccount = new CreateAccount();
+    public AccountStepDefs() {
+        createAccountPage = new CreateAccountPage();
     }
+
     @Given("I click on create account")
-    public void iClickCreateAccount(){
-        createAccount.clickCreateAccount();
+    public void iClickCreateAccount() {
+        createAccountPage.clickCreateAccount();
     }
 
     @When("^I click (Mr|Mrs) social title button$")
     public void iClickSocialTitleButton(String title) {
-        createAccount.clickTitleButton(title);
+        createAccountPage.clickTitleButton(title);
+    }
+
+    @And("I fill out the information table")
+    public void FillInNewAccountInfoAndSave(DataTable table){
+        Map<String, String> mapOfTable=table.asMap();
+        createAccountPage.fillInAccount(mapOfTable);
+        createAccountPage.clickSave();
+        }
+
+    @Then("I will be logged in as a new user")
+    public void iWillBeLoggedInAsANewUser() {
+        String nameOfNewUser = "Samuel Rouse";
+        Assert.assertTrue("expected message not displayed \"" + nameOfNewUser + "\"",createAccountPage.successfulNewUser().contains(nameOfNewUser));
     }
 }
