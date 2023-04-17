@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import pageObjects.HomePage;
 import pageObjects.RemoveItem;
 import pageObjects.ShoppingCart;
@@ -46,7 +47,7 @@ public class removeItemStepDefs {
 @Then("the current basket will be empty")
 public void iAmClearingTheBasket() {
     removeItem.removingItem();
-    shoppingCart.confirmCartIsEmpty();
+    Assert.assertEquals("There are no more items in your cart" , shoppingCart.confirmCartIsEmpty());
     }
 }
 
