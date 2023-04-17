@@ -3,6 +3,7 @@ package stepDefinitions;
 import io.cucumber.java.Before;
 import io.cucumber.java.BeforeAll;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.After;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -24,6 +25,9 @@ public class Hooks {
     @Before
     public void before() {
         driver.manage().deleteAllCookies();
-
+    }
+    @After
+    public void after() {
+        driver.close();
     }
 }
