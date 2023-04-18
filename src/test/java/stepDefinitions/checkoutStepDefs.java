@@ -4,6 +4,7 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.DataTableType;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import pageObjects.ShoppingCartPage;
@@ -38,6 +39,15 @@ public class checkoutStepDefs {
         shoppingCartPage.fillInAddress(mapOfTable);
         shoppingCartPage.clickContinueButton();
         shoppingCartPage.selectState("Alabama");
+        shoppingCartPage.clickAddressContinueButton();
+        shoppingCartPage.clickShippingContinueButton();
+    }
+
+    @Then("I can make my payment")
+    public void iCanMakeMyPayment() {
+        shoppingCartPage.clickPayByBankWire();
+        shoppingCartPage.clickAcceptTermsAndConditions();
+        shoppingCartPage.clickOrderWithObligationButton();
     }
 }
 
