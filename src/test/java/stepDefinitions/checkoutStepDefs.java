@@ -32,7 +32,7 @@ public class checkoutStepDefs {
     public void iFillInMyPersonalInformationAddressAndShippingMethod(DataTable table) {
         Map<String, String> mapOfTable = table.asMap();
         shoppingCartPage.fillInAddress(mapOfTable);
-        shoppingCartPage.clickContinueButton();
+        shoppingCartPage.clickPersonalInformationContinueButton();
 
     }
     @When("provide my address and shipping method")
