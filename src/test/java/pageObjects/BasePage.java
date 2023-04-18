@@ -8,8 +8,6 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import stepDefinitions.Hooks;
 
-import java.time.Duration;
-
 abstract class BasePage {
     WebDriver driver;
     WebDriverWait wait;
