@@ -43,4 +43,3 @@ public class BasketStepDefs {
         Assert.assertEquals("There are no more items in your cart", shoppingCart.confirmCartIsEmpty());
     }
 }
-
