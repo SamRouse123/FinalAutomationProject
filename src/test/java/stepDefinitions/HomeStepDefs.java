@@ -2,18 +2,17 @@ package stepDefinitions;
 
 import io.cucumber.java.en.Given;
 import pageObjects.HomePage;
-import pageObjects.LoginPage;
 
-public class loginStepDefs {
-    LoginPage loginPage;
+public class HomeStepDefs {
     HomePage homePage;
 
-    public loginStepDefs() {
+    public HomeStepDefs() {
         homePage = new HomePage();
-        loginPage = new LoginPage();
     }
+
     @Given("I am on the homepage")
-    public void iAmOnHomePage(){
+    public void iAmOnHomePage() {
         homePage.goToHomepage();
+        System.out.println("I am on the homepage");
     }
 }

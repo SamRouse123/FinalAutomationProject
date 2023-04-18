@@ -5,19 +5,21 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import pageObjects.CategoryPage;
-import pageObjects.HomePage;
-import pageObjects.LoginPage;
+import pageObjects.*;
 
 public class BasketStepDefs {
     LoginPage loginPage;
     HomePage homePage;
     CategoryPage categoryPage;
+    RemoveItem removeItem;
+    ShoppingCart shoppingCart;
 
     public BasketStepDefs() {
         homePage = new HomePage();
         loginPage = new LoginPage();
         categoryPage = new CategoryPage();
+        removeItem = new RemoveItem();
+        shoppingCart = new ShoppingCart();
     }
     @Given("I am on the category page")
     public void iAmOnTheCategoryPage() {
@@ -25,9 +27,9 @@ public class BasketStepDefs {
         System.out.println("on category page");
     }
 
-    @When("I click blouse")
-    public void iClickBlouse() {
-        categoryPage.clickBlouse();
+    @When("I click on the item of purchase")
+    public void iAmClickingOnTheItem() {
+        removeItem.chooseItem();
     }
 
     @And("^I click add (\\d) blouse to cart$")
@@ -46,4 +48,16 @@ public class BasketStepDefs {
         System.out.println("Quantity will be " + numberItems);
     }
 
+    @When("I add the item to the cart and I proceed to checkout")
+    public void iAmAddingItemToCartAndCheckingOut() {
+        removeItem.addingToCart();
+        removeItem.checkingOut();
+    }
+
+
+    @Then("the current basket will be empty")
+    public void iAmClearingTheBasket() {
+        removeItem.removingItem();
+        Assert.assertEquals("There are no more items in your cart", shoppingCart.confirmCartIsEmpty());
+    }
 }
