@@ -5,7 +5,6 @@ import io.cucumber.java.DataTableType;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
-import org.apache.commons.text.CaseUtils;
 import org.openqa.selenium.By;
 import pageObjects.ShoppingCartPage;
 
@@ -38,8 +37,7 @@ public class checkoutStepDefs {
         Map<String, String> mapOfTable = table.asMap();
         shoppingCartPage.fillInAddress(mapOfTable);
         shoppingCartPage.clickContinueButton();
-        shoppingCartPage.clickStateDropDown();
-//        shoppingCartPage.chooseState("Alabama");
+        shoppingCartPage.selectState("Alabama");
     }
 }
 
