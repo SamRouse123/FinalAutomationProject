@@ -32,4 +32,8 @@ abstract class BasePage {
         select.selectByVisibleText(value);
     }
 
+    public String getElementText(By selector) {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(selector)).getText();
+    }
+
 }
