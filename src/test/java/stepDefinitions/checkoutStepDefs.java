@@ -6,7 +6,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
+import pageObjects.OrderConfirmationPage;
 import pageObjects.ShoppingCartPage;
 
 import java.util.Map;
@@ -16,9 +16,11 @@ import static stepDefinitions.Hooks.driver;
 public class checkoutStepDefs {
 
     ShoppingCartPage shoppingCartPage;
+    OrderConfirmationPage orderConfirmationPage;
 
     public checkoutStepDefs() {
         shoppingCartPage = new ShoppingCartPage();
+        orderConfirmationPage = new OrderConfirmationPage();
     }
 
     @Given("I am on the Shopping Cart Page and I proceed to checkout")
@@ -48,6 +50,7 @@ public class checkoutStepDefs {
         shoppingCartPage.clickPayByBankWire();
         shoppingCartPage.clickAcceptTermsAndConditions();
         shoppingCartPage.clickOrderWithObligationButton();
+        orderConfirmationPage.assertOrderConfirmed();
     }
 }
 
