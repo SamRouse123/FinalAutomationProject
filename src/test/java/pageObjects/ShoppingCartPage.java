@@ -1,8 +1,6 @@
 package pageObjects;
-import io.cucumber.messages.types.DataTable;
 import org.openqa.selenium.By;
 
-import java.net.URL;
 import java.util.Map;
 
 public class ShoppingCartPage extends BasePage{
@@ -21,9 +19,7 @@ public class ShoppingCartPage extends BasePage{
     private static final By CONTINUE_BUTTON = By.xpath
             ("//footer[@class='form-footer clearfix']/button");
 
-    private static final By CHOOSE_STATE = By.cssSelector(".select.form-control.form-control-select");
-//            By.xpath("//select[@class='form-control form-control-select']");
-
+    private static final By CHOOSE_STATE = By.cssSelector("select[name='id_state']");
 
     public void goToShoppingCart() {
         homePage.goToHomepage();
@@ -42,11 +38,9 @@ public class ShoppingCartPage extends BasePage{
         waitAndClick(CONTINUE_BUTTON);
     }
 
-    public void chooseState(String state){
+    public void selectState(String state){
         selectDropDownByText(CHOOSE_STATE, state);
     }
-    public void clickStateDropDown(){
-        waitAndClick(CHOOSE_STATE);
-    }
+
 
 }
