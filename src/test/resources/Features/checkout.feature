@@ -12,5 +12,5 @@ Feature: checkout successfully
       | City                  | San Francisco      |
       | Postcode              | 12345              |
 
-#    Then I can make my payment
+    Then I can make my payment
 
