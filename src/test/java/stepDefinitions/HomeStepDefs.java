@@ -1,7 +1,6 @@
 package stepDefinitions;
 
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.When;
 import pageObjects.HomePage;
 import pageObjects.LoginPage;
 
@@ -16,12 +15,5 @@ public class loginStepDefs {
     @Given("I am on the homepage")
     public void iAmOnHomePage(){
         homePage.goToHomepage();
-        System.out.println("Im on homepage");
     }
-    @When("I click on login")
-    public void iClickOnLogin() {
-        loginPage.clickSignIn();
-    }
-
-
 }

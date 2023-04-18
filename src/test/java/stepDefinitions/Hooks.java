@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
 import io.cucumber.java.BeforeAll;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -19,7 +20,7 @@ public class Hooks {
     public static void beforeAll() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--remote-allow-origins=*", "start-maximized");
         driver = new ChromeDriver(options);
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
@@ -28,5 +29,9 @@ public class Hooks {
     public void before() {
         driver.manage().deleteAllCookies();
 
+    }
+    @AfterAll
+    public static void GlobalTeardown(){
+        driver.close();
     }
 }
