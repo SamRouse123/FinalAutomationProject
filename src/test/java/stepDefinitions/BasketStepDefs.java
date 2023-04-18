@@ -1,47 +1,45 @@
 package stepDefinitions;
 
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pageObjects.BasketPage;
-import pageObjects.TShirtPage;
+import org.junit.Assert;
 import pageObjects.HomePage;
+import pageObjects.RemoveItem;
+import pageObjects.ShoppingCart;
 
 public class BasketStepDefs {
     HomePage homePage;
-    BasketPage basketPage;
-    TShirtPage tShirtPage;
+    RemoveItem removeItem;
+
+    ShoppingCart shoppingCart;
 
     public BasketStepDefs() {
         homePage = new HomePage();
-        basketPage = new BasketPage();
-        tShirtPage = new TShirtPage();
+        removeItem = new RemoveItem();
+        shoppingCart = new ShoppingCart();
     }
 
-    @Given("I am on the homepage")
-    public void iAmOnHomePage() {
-        homePage.goToHomepage();
+
+
+
+    @When("I click on the item of purchase")
+    public void iAmClickingOnTheItem() {
+        removeItem.chooseItem();
+
     }
 
-    @When("I select an item")
-    public void clickOnItem() {
-        homePage.clickOnDress();
+
+    @When("I add the item to the cart and I proceed to checkout")
+    public void iAmAddingItemToCartAndCheckingOut() {
+        removeItem.addingToCart();
+        removeItem.checkingOut();
     }
 
-    @And("Click add to cart button and proceed to checkout")
-    public void addToCart() {
-        tShirtPage.clickAddToCart();
-        tShirtPage.clickProceedToCheckOut();
-    }
 
-    @And("I increase the quantity of item")
-    public void increaseItemQuantity() {
-        basketPage.clickIncreaseQuantity();
-    }
-
-    @Then("I will have another item")
-    public void checkIncreasedQuantity() {
-        basketPage.checkForIncreasedItems("2");
+    @Then("the current basket will be empty")
+    public void iAmClearingTheBasket() {
+        removeItem.removingItem();
+        Assert.assertEquals("There are no more items in your cart", shoppingCart.confirmCartIsEmpty());
     }
 }

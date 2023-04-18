@@ -6,8 +6,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import stepDefinitions.Hooks;
 
-import java.time.Duration;
-
 abstract class BasePage {
     WebDriver driver;
     WebDriverWait wait;
@@ -23,4 +21,10 @@ abstract class BasePage {
         wait.until(ExpectedConditions.elementToBeClickable(selector)).sendKeys(keys);
     }
 
-}
+    public void waitAndClick(By selector){
+        wait.until(ExpectedConditions.elementToBeClickable(selector)).click();
+    }
+
+    }
+
+
