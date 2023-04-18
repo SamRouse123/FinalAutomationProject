@@ -13,6 +13,13 @@ abstract class BasePage {
         driver = Hooks.driver;
         wait = Hooks.wait;
     }
+    public void waitAndClick(By selector) {
+
+        wait.until(ExpectedConditions.elementToBeClickable(selector)).click();
+    }
+    public void waitAndSendKeys(By selector, String keys) {
+        wait.until(ExpectedConditions.elementToBeClickable(selector)).sendKeys(keys);
+    }
 
     public void waitAndClick(By selector){
         wait.until(ExpectedConditions.elementToBeClickable(selector)).click();
