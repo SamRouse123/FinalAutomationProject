@@ -21,7 +21,7 @@ public class ShoppingCartPage extends BasePage{
     private static final By CHOOSE_STATE = By.cssSelector("select[name='id_state']");
     private static final By ADDRESS_CONTINUE_BUTTON = By.cssSelector("[name='confirm-addresses']");
     private static final By SHIPPING_CONTINUE_BUTTON = By.cssSelector("[name='confirmDeliveryOption']");
-    private static final By PAY_BY_BANK_WIRE_OPTION = By.cssSelector("#payment-option-2");
+    private static final By PAY_BY_BANK_WIRE_OPTION = By.xpath("//input[@id='payment-option-2']/parent::span");
     private static final By ACCEPT_TERMS_AND_CONDITIONS = By.cssSelector("div.float-xs-left > span");
     private static final By ORDER_WITH_OBLIGATION_TO_PAY = By.cssSelector("button.btn.btn-primary.center-block");
 
