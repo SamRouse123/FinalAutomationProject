@@ -1,8 +1,6 @@
 package stepDefinitions;
 
 import io.cucumber.datatable.DataTable;
-import io.cucumber.java.DataTableType;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -10,8 +8,6 @@ import pageObjects.OrderConfirmationPage;
 import pageObjects.ShoppingCartPage;
 
 import java.util.Map;
-
-import static stepDefinitions.Hooks.driver;
 
 public class checkoutStepDefs {
 
@@ -39,7 +35,6 @@ public class checkoutStepDefs {
     public void provideMyAddressAndShippingMethod(DataTable table) {
         Map<String, String> mapOfTable = table.asMap();
         shoppingCartPage.fillInAddress(mapOfTable);
-        shoppingCartPage.clickContinueButton();
         shoppingCartPage.selectState("Alabama");
         shoppingCartPage.clickAddressContinueButton();
         shoppingCartPage.clickShippingContinueButton();
