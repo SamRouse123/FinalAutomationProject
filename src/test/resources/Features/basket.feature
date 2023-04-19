@@ -1,5 +1,11 @@
 Feature: Basket
 
+  Scenario: Adding items to cart
+    Given I am on the category page
+    When I click blouse
+    And I click add 1 blouse to cart
+    Then I will see a pop up confirming ive added 1 item to the basket
+
   Scenario: Increasing quantity of item in basket
     Given I am on the homepage
     When I select an item
